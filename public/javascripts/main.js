@@ -40,14 +40,13 @@ define(['jquery'],
   body.on('click', '#logout', function(ev) {
     ev.preventDefault();
 
-    navigator.id.logout(function() {
-      $.ajax({
-        url: '/logout',
-        type: 'POST',
-        dataType: 'json'
-      }).done(function() {
-        document.location.href = '/';
-      });
+    $.ajax({
+      url: '/persona/logout',
+      type: 'POST',
+      dataType: 'json',
+      cache: false
+    }).done(function() {
+      document.location.href = '/';
     });
   });
 });
