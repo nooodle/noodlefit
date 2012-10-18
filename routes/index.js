@@ -21,4 +21,12 @@ module.exports = function(app, client, isLoggedIn) {
 
     });
   });
+
+  // Logout
+  app.post('/logout', isLoggedIn, function(req, res) {
+    req.session.reset();
+    res.json({
+      'status': 'okay'
+    });
+  });
 };
