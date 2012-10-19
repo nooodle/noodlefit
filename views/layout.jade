@@ -20,9 +20,5 @@ html
     block content
     #footer
 
-    script(type='text/javascript')
-      var currentUser = null;
-    if session.email
-      != '<script type="text/javascript">currentUser = "' + session.email + '";</script>'
     script(src='https://login.persona.org/include.js', type='text/javascript')
     script(src='/javascripts/require.js', data-main='/javascripts/main')
