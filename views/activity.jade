@@ -1,0 +1,9 @@
+extend layout
+
+block content
+  h1 #{activity.name}
+  h2 #{new Date(activity.time)}
+
+  ol.points
+    each point in points
+      li #{new Date(point.time)} lat: #{point.lat} lon: #{point.lon} ele: #{point.ele}
