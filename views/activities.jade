@@ -1,0 +1,8 @@
+extend layout
+
+block content
+  h1 Activities
+  ol.activities
+    each activity in activities
+      li
+        a(href='/activity/#{activity.id}') #{new Date(activity.time)} - #{activity.name}

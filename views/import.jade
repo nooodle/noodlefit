@@ -1,0 +1,11 @@
+extend layout
+
+block content
+  p This is the import page. We support importing GPX files.
+
+  if session.email
+    form(method="post", enctype="multipart/form-data", action="")
+      input(type="file", name="file", required="required")
+      button(type="submit") Upload
+  else
+    p You must login to import.
