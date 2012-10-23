@@ -23,13 +23,16 @@ module.exports = function(app, client, isLoggedIn) {
   });
 
   app.get('/activity/:id', function(req, res) {
-    activity.getActivity('activity:' + req.params.id, client, function(err, activity) {
+    activity.getActivity('activity:' + req.params.id, client, function(err, activity_) {
       point.getPoints(req.params.id, client, function(err, points) {
-        res.render('activity', {
-          pageType: 'index',
-          session: req.session,
-          activity: activity,
-          points: points
+        activity.getActivityStats(req.params.id, client, function(err, stats) {
+          res.render('activity', {
+            pageType: 'index',
+            session: req.session,
+            activity: activity_,
+            points: points,
+            stats: stats
+          });
         });
       });
     });
