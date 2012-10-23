@@ -4,8 +4,14 @@ block content
   h1 #{activity.name}
   h2 #{new Date(activity.time)}
 
+  ul#stats
+    li Distance: #{stats.distance} km
+    li Time: #{stats.time} h
+    li Average Speed: #{stats.averageSpeed} km/h
+
   #map-canvas
 
   ol#points
     each point in points
       li(class='point', data-date='#{point.time}', data-altitude='#{point.ele}', data-lon='#{point.lon}', data-lat='#{point.lat}')
+
