@@ -4,6 +4,11 @@ block content
   h1 #{activity.name}
   h2 #{new Date(activity.time)}
 
+  ul.stats
+    li Distance: #{stats.distance} km
+    li Time: #{stats.time} h
+    li Average Speed: #{stats.averageSpeed} km/h
+
   ol.points
     each point in points
-      li #{new Date(point.time)} lat: #{point.lat} lon: #{point.lon} ele: #{point.ele}
+      li #{point.time} lat: #{point.lat} lon: #{point.lon} ele: #{point.ele}
