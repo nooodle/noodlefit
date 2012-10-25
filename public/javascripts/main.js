@@ -8,8 +8,8 @@ requirejs.config({
   }
 });
 
-define(['jquery'],
-  function($) {
+define(['jquery', 'googlemap'],
+  function($, googlemap) {
 
   var body = $('body');
 
@@ -49,4 +49,8 @@ define(['jquery'],
       document.location.href = '/';
     });
   });
+
+  if ($('#map-canvas')) {
+    googlemap.drawMap();
+  }
 });

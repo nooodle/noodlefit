@@ -46,3 +46,72 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+body {
+    font-family: Arial;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: rgba(1, 1, 1, 0.85);
+    float: left;
+    width: 100%;
+}
+
+header li {
+    float: left;
+    margin: 5px;
+}
+
+header li a {
+    color: #eee;
+    display: block;
+    padding: 3px 5px;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.content-wrapper {
+    clear: both;
+    float: left;
+    padding: 10px;
+    width: 80%;
+}
+
+.activities {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.activities li a {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    color: #222;
+    display: block;
+    padding: 10px;
+}
+
+.activities li a:hover {
+    background-color: #7ae5f8;
+    color: #26545c;
+}
+
+#map-canvas {
+    display: block;
+    float: left;
+    height: 500px;
+    margin-top: 20px;
+    position: relative;
+    width: 500px;
+}
+
+#points {
+    display: none;
+}

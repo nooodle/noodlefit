@@ -4,6 +4,8 @@ block content
   h1 #{activity.name}
   h2 #{new Date(activity.time)}
 
-  ol.points
+  #map-canvas
+
+  ol#points
     each point in points
-      li #{new Date(point.time)} lat: #{point.lat} lon: #{point.lon} ele: #{point.ele}
+      li(class='point', data-date='#{point.time}', data-altitude='#{point.ele}', data-lon='#{point.lon}', data-lat='#{point.lat}')
