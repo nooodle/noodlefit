@@ -15,8 +15,8 @@ define(['jquery'],
     drawMap: function() {
       var mapDiv = document.getElementById('map-canvas');
       var map = new google.maps.Map(mapDiv, {
-        center: new google.maps.LatLng(pointItems[0].getAttribute('data-lat'), pointItems[0].getAttribute('data-lon')),
-        zoom: 14,
+        center: new google.maps.LatLng(pointItems[0].getAttribute('data-lat'), pointItems[pointItems.length - 1].getAttribute('data-lon')),
+        zoom: 13,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
       var path = [];

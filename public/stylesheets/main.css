@@ -109,9 +109,24 @@ h1 {
     height: 500px;
     margin-top: 20px;
     position: relative;
-    width: 500px;
+    width: 800px;
 }
 
 #points {
     display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min--moz-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+
+}
+
+@media only screen and (max-width: 599px) and (orientation:portrait) {
+    .content-wrapper {
+        width: 320px;
+    }
+
+    #map-canvas {
+        height: 200px;
+        width: 300px;
+    }
 }
