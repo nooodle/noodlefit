@@ -1,5 +1,9 @@
 # NoodleFit
 
+## What it is
+
+A Runkeeper clone.
+
 ## Installation instructions
 
 Clone the repository
