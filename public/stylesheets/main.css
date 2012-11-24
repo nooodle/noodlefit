@@ -57,8 +57,9 @@ a {
 }
 
 header {
-    background-color: #588086;
-    float: left;
+    background-color: #306981;
+    box-shadow: #111 -1px 0 3px;
+    position: fixed;
     width: 100%;
 }
 
@@ -68,18 +69,19 @@ header li {
 }
 
 header li a {
-    background-color: #62939a;
+    background-color: #49849d;
     border-radius: 3px;
     box-shadow: inset #3a4749 1px 1px 2px;
-    color: #f1f1f1;
+    color: #cbf0ff;
     font-size: 15px;
     display: block;
     padding: 6px 15px;
-    text-shadow: #395154 1px 1px 1px;
+    text-shadow: #395154 0 1px 1px;
 }
 
 header li a:hover {
-    background-color: #71a6ad;
+    background-color: #6aaac4;
+    color: #fff;
 }
 
 h1 {
@@ -95,8 +97,9 @@ p {
 .content-wrapper {
     clear: both;
     float: left;
+    margin-top: 50px;
     padding: 10px;
-    width: 80%;
+    width: 940px;
 }
 
 .activities {
@@ -130,7 +133,7 @@ p {
     float: left;
     height: 500px;
     position: relative;
-    width: 960px;
+    width: 935px;
 }
 
 #stats {
@@ -148,9 +151,11 @@ p {
     color: #4f6e73;
     float: left;
     font-size: 20px;
+    overflow: hidden;
     padding: 5px;
+    text-overflow: ellipsis;
     text-shadow: #fff 0 1px 0;
-    width: 303px;
+    width: 295px;
 }
 
 #stats li span {
@@ -168,16 +173,44 @@ p {
 }
 
 @media only screen and (max-width: 599px) and (orientation:portrait) {
+    body {
+        overflow: hidden;
+    }
+    header {
+        padding-bottom: 5px;
+        width: 100%;
+    }
+
+    header li {
+        margin-bottom: 2px;
+        text-align: center;
+        width: 141px;
+    }
+
+    h1 {
+        font-size: 22px;
+        line-height: 25px;
+    }
+
     .content-wrapper {
-        width: 320px;
+        margin-top: 90px;
+        width: 285px;
     }
 
     #stats {
-        width: 280px;
+        width: 265px;
+    }
+
+    #stats li {
+        font-size: 18px;
+    }
+
+    #stats li span {
+        font-size: 22px;
     }
 
     #map-canvas {
         height: 200px;
-        width: 300px;
+        width: 285px;
     }
 }
