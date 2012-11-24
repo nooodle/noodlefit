@@ -1,7 +1,8 @@
 extend layout
 
 block content
-  p This is the import page. We support importing GPX files.
+  h1 Upload an Activity
+  p Currently, we support *.GPX files.
 
   if session.email
     form(method="post", enctype="multipart/form-data", action="")

@@ -1,7 +1,11 @@
 extend layout
 
 block content
-  p This is the main page
-
   if session.email
-    p You are logged in!
+    h1 Your most recent activities
+    ol.activities
+      each activity in activities
+        li
+          a(href='/activity/#{activity.id}') #{new Date(activity.time)} - #{activity.name}
+  else
+    h1 Noodlefit

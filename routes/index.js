@@ -6,14 +6,24 @@ module.exports = function(app, client, isLoggedIn) {
   var import_ = require('../lib/import');
 
   app.get('/', function(req, res) {
-    res.render('index', {
-      pageType: 'index',
-      session: req.session
-    });
+    if (req.session.email) {
+      activity.getActivities(req.session.email, 2, client, function(err, activities) {
+        res.render('index', {
+          pageType: 'index',
+          session: req.session,
+          activities: activities
+        });
+      });
+    } else {
+      res.render('index', {
+        pageType: 'index',
+        session: req.session
+      });
+    }
   });
 
   app.get('/activities', function(req, res) {
-    activity.getActivities(req.session.email, client, function(err, activities) {
+    activity.getActivities(req.session.email, 0, client, function(err, activities) {
       res.render('activities', {
         pageType: 'index',
         session: req.session,
@@ -61,7 +71,7 @@ module.exports = function(app, client, isLoggedIn) {
     });
   });
 
-  app.post('/import', function(req, res) {    
+  app.post('/import', function(req, res) {
     import_.importGpx(req, client, function(err, activityKey) {
       res.redirect('/activities');
     });
