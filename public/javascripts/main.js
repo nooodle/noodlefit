@@ -12,6 +12,7 @@ define(['jquery', 'googlemap'],
   function($, googlemap) {
 
   var body = $('body');
+  var header = $('header');
 
   body.on('click', '#login', function(ev) {
     ev.preventDefault();
@@ -53,4 +54,7 @@ define(['jquery', 'googlemap'],
   if ($('#map-canvas')) {
     googlemap.drawMap();
   }
+
+  // Overrides the zindex of the map
+  header.css({ 'zIndex': 5 });
 });

@@ -174,7 +174,7 @@ p {
 
 @media only screen and (max-width: 599px) and (orientation:portrait) {
     body {
-        overflow: hidden;
+        overflow-x: hidden;
     }
     header {
         padding-bottom: 5px;
